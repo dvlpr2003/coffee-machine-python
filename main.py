@@ -34,9 +34,8 @@ while operation:
             pennies = int(input("How many pennies?: "))
 
             total = quarters * 0.25 + dimes * 0.10 + nickles * 0.05 + pennies * 0.01
-            print(f"Here is ${total} in change.")
-            resource["water"] -= water
-            resource["coffee"] -= coffee
+            print(f"Here is ${round(total,2)} in change.")
+
             if cost <= total:
                 print("enjoy")
             else:
@@ -50,6 +49,8 @@ while operation:
             else:
                 print(f"Sorry there is not enough {coffee}")
                 operation = False
+        resource["water"] -= water
+        resource["coffee"] -= coffee
     elif select_option == "latte":
         water = MENU["latte"]["ingredients"]["water"]
         coffee = MENU["latte"]["ingredients"]["coffee"]
@@ -68,10 +69,8 @@ while operation:
             pennies = int(input("How many pennies?: "))
 
             total = quarters * 0.25 + dimes * 0.10 + nickles * 0.05 + pennies * 0.01
-            print(f"Here is ${total} in change.")
-            resource["water"] -= water
-            resource["coffee"] -= coffee
-            resource["milk"] -= milk
+            print(f"Here is ${round(total,2)} in change.")
+
             if cost <= total:
                 print("enjoy")
             else:
@@ -88,6 +87,9 @@ while operation:
             else:
                 print("Sorry there is not enough coffee")
                 operation = False
+        resource["water"] -= water
+        resource["coffee"] -= coffee
+        resource["milk"] -= milk
     elif select_option == "cappuccino":
         water = MENU["cappuccino"]["ingredients"]["water"]
         coffee = MENU["cappuccino"]["ingredients"]["coffee"]
@@ -106,10 +108,8 @@ while operation:
             pennies = int(input("How many pennies?: "))
 
             total = quarters * 0.25 + dimes * 0.10 + nickles * 0.05 + pennies * 0.01
-            print(f"Here is ${total} in change.")
-            resource["water"] -= water
-            resource["coffee"] -= coffee
-            resource["milk"] -= milk
+            print(f"Here is ${round(total,2)} in change.")
+
             if cost <= total:
                 print("enjoy")
             else:
@@ -126,6 +126,9 @@ while operation:
             else:
                 print("Sorry there is not enough coffee")
                 operation = False
+        resource["water"] -= water
+        resource["coffee"] -= coffee
+        resource["milk"] -= milk
     elif select_option == "report":
         for i in resource:
             print(f"{i}: {resource[i]}")
